@@ -1,0 +1,26 @@
+:host {
+  --md3-content-offset-top: 0;
+  --md3-content-offset-bottom: 0;
+  --md3-content-offset-left: 0;
+  width: 100%;
+  max-width: calc(100% - var(--md3-content-offset-left));
+  height: calc(100% - var(--md3-content-offset-top) - var(--md3-content-offset-bottom));
+  position: absolute;
+  top: var(--md3-content-offset-top);
+  bottom: var(--md3-content-offset-bottom);
+  left: var(--md3-content-offset-left);
+  margin: 0;
+  display: block;
+  -ms-flex: 1;
+  flex: 1;
+  contain: size style;
+  overflow-y: auto;
+}
+
+:host(.md3-content--fullscreen) {
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  padding-top: var(--md3-content-offset-top);
+  padding-bottom: var(--md3-content-offset-bottom);
+}

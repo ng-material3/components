@@ -1,0 +1,13 @@
+@import "../assets/fonts/material-icons-outlined.css";
+@import "../assets/fonts/material-icons.css";
+@import "../assets/fonts/roboto.css";
+@import "./variables.css";
+
+html {
+  font-family: var(--md-font-family);
+}
+
+body {
+  background: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+}

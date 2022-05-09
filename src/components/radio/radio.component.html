@@ -1,0 +1,52 @@
+<label
+  class="md3-radio-button-label"
+  [attr.for]="id ? id : null">
+
+  <ng-template
+    #md3RadioButtonContent>
+    
+    <ng-content></ng-content>
+  
+  </ng-template>
+
+  <span
+    class="md3-radio-button-content md3-radio-button-content--start"
+    *ngIf="direction === 'start'">
+  
+    <ng-container
+      *ngTemplateOutlet="md3RadioButtonContent"></ng-container>
+  
+  </span>
+
+  <div
+    class="md3-radio-button-inner-container">
+  
+    <span
+      class="md3-radio-button-outer-circle"></span>
+      
+    <span
+      class="md3-radio-button-inner-circle"></span>
+      
+    <div
+      class="md3-radio-button-state-layer md3-static-ripple-indicator"></div>
+
+    <input
+      class="md3-radio-button-input"
+      type="radio"
+      [attr.id]="id ? id : null"
+      [attr.name]="name ? name : null"
+      [attr.value]="value"
+      [checked]="checked">
+  
+  </div>
+
+  <span
+    class="md3-radio-button-content md3-radio-button-content--end"
+    *ngIf="direction == null || direction === 'end'">
+  
+    <ng-container
+      *ngTemplateOutlet="md3RadioButtonContent"></ng-container>
+  
+  </span>
+
+</label>

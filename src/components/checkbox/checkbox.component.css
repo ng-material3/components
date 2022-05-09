@@ -1,0 +1,149 @@
+.md3-checkbox {
+  --md3-inner-container-opacity: 1;
+  --md3-content-opacity: 1;
+  --md3-state-layer-background-color: var(--md-sys-color-primary);
+  --md3-state-layer-opacity: 0;
+
+  display: inline-block;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.md3-checkbox:not(:last-of-type) {
+  margin-right: 16px;
+}
+
+.md3-checkbox-label,
+.md3-checkbox-content {
+  white-space: nowrap;
+  line-height: 24px;
+}
+
+.md3-checkbox-label {
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.md3-checkbox-inner-container {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  order: 0;
+  line-height: 0;
+  white-space: nowrap;
+  opacity: var(--md3-inner-container-opacity);
+}
+
+.md3-checkbox-state-layer {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+  background-color: var(--md3-state-layer-background-color);
+  opacity: var(--md3-state-layer-opacity);
+}
+
+.md3-checkbox-input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  white-space: nowrap;
+  outline: 0;
+  border: 0;
+}
+
+.md3-checkbox-background,
+.md3-checkbox-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.md3-checkbox-frame {
+  background-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-color: inherit;
+  transition: border-color 90ms cubic-bezier(0, 0, 0.2, 0.1);
+}
+
+.md3-checkbox-background {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+  transition: background-color 90ms cubic-bezier(0, 0, 0.2, 0.1),
+              opacity 90ms cubic-bezier(0, 0, 0.2, 0.1);
+}
+
+.md3-checkbox.md3-checkbox--checked .md3-checkbox-background {
+  background-color: var(--md-sys-color-primary);
+}
+
+.md3-checkbox.md3-checkbox--checked .md3-checkbox-checkmark-path {
+  stroke-width: 2px;
+  stroke: var(--md-sys-color-on-primary);
+}
+
+.md3-checkbox-content {
+  opacity: var(--md3-content-opacity);
+}
+
+
+.md3-checkbox-content.md3-checkbox-content--end:not(:empty) {
+  margin-left: 8px;
+}
+
+.md3-checkbox-content.md3-checkbox-content--start:not(:empty) {
+  margin-right: 8px;
+}
+
+.md3-checkbox:not([disabled="true"]):hover {
+  --md3-state-layer-opacity: var(--md-sys-state-hover-state-layer-opacity);
+}
+
+.md3-checkbox:not([disabled="true"]):active {
+  --md3-state-layer-opacity: var(--md-sys-state-pressed-state-layer-opacity);
+}
+
+.md3-checkbox:not([disabled="true"]):focus {
+  --md3-state-layer-opacity: var(--md-sys-state-focus-state-layer-opacity);
+}
+
+.md3-checkbox[disabled="true"] {
+  --md3-inner-container-opacity: var(--md-sys-state-disabled-state-container-opacity) !important;
+  --md3-content-opacity: var(--md-sys-state-disabled-state-content-opacity) !important;
+  --md3-state-layer-opacity: 0 !important;
+}
+
+.md3-checkbox[disabled="true"] .md3-checkbox-label {
+  cursor: default !important;
+}

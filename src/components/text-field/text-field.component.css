@@ -1,0 +1,175 @@
+:host {
+  width: 180px;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.125;
+  letter-spacing: normal;
+}
+
+:host(.md3-text-field--full-width) {
+  width: 100%;
+}
+
+.md3-text-field-flex {
+  width: 100%;
+  -webkit-padding-start: 0.75em;
+  padding-inline-start: 0.75em;
+  padding-left: 0.75em;
+  -webkit-padding-end: 0.75em;
+  padding-inline-end: 0.75em;
+  padding-right: 0.75em;
+  display: inline-flex;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border-bottom: 1px solid var(--md-sys-color-outline);
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+:host(.md3-text-field--has-label) .md3-text-field-flex {
+  padding-top: 0.75em;
+}
+
+.md3-text-field-infix,
+.md3-text-field-suffix {
+  position: relative;
+  white-space: nowrap;
+  flex: auto;
+}
+
+.md3-text-field-infix {
+  width: 100%;
+  display: block;
+  padding: 0.25em 0 0.75em;
+  border-top: 0.84375em solid transparent;
+}
+
+.md3-text-field-suffix {
+  width: auto;
+}
+
+.md3-text-field-input {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  vertical-align: bottom;
+  -webkit-box-sizing: border-box;
+  box-sizing: content-box;
+  border: none;
+  outline: none;
+  text-align: inherit;
+  font: inherit;
+  background: transparent;
+  color: currentColor;
+}
+
+.md3-text-field-input::placeholder {
+  user-select: none;
+  transition: none;
+}
+
+:host(.md3-text-field--has-label) .md3-text-field-input::placeholder {
+  color: transparent !important;
+  transition: color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+:host(:not(.md3-text-field--has-label)),
+:host(.md3-text-field--has-label.md3-text-field--focused) .md3-text-field-input::placeholder {
+  color: var(--md-sys-color-on-surface) !important;
+}
+
+textarea.md3-text-field-input {
+  resize: vertical;
+}
+
+.md3-text-field-label-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  pointer-events: none;
+  top: -0.84375em;
+  padding-top: 0.84375em;
+}
+
+.md3-text-field-label {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 1.09375em;
+  margin-top: -.5em;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--md-sys-color-on-surface-variant);
+  font: inherit;
+  text-overflow: ellipsis;
+  transform-origin: 0 0;
+  transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+              color 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+              width 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+:host(.md3-text-field--focused) .md3-text-field-label,
+:host(:not(.md3-text-field--focused).md3-text-field--has-text) .md3-text-field-label {
+  transform: translateY(-.59375em) scale(.75);
+}
+
+:host(.md3-text-field--focused) .md3-text-field-label {
+  width: 133.333333333%;
+  color: var(--md-sys-color-primary);
+}
+
+.md3-text-field-underline {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+  transform: scale3d(1, 1.0001, 1);
+}
+
+.md3-text-field-ripple {
+  width: 100%;
+  height: 8px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform-origin: 50%;
+  transform: scaleX(0.5);
+  opacity: 0;
+  border-radius: 0 0 8px 8px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-color: var(--md-sys-color-on-surface);
+  transition: border-color 300ms cubic-bezier(0.55, 0, 0.55, 0.2);
+}
+
+:host(:hover) .md3-text-field-ripple,
+:host(.md3-text-field--focused) .md3-text-field-ripple,
+:host(:not(.md3-text-field--focused).md3-text-field--has-text) .md3-text-field-ripple {
+  opacity: 1;
+  transform: none;
+  transition: opacity 600ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+:host(.md3-text-field--focused) .md3-text-field-ripple {
+  border-color: var(--md-sys-color-primary);
+}
+
+:host([disabled="true"]) .md3-text-field-flex {
+  border-bottom: 0px !important;
+  opacity: var(--md-sys-state-disabled-state-content-opacity) !important;
+}
+
+:host([disabled="true"]) .md3-text-field-ripple {
+  opacity: 0 !important;
+}

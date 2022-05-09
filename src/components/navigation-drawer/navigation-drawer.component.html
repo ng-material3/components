@@ -1,0 +1,19 @@
+<aside
+  class="md3-navigation-drawer-container">
+
+  <div
+    class="md3-navigation-drawer-content-layer"></div>
+
+  <nav
+    class="md3-navigation-drawer-content">
+
+    <ng-content></ng-content>
+
+  </nav>
+
+</aside>
+
+<div
+  class="md3-navigation-drawer-scrim"
+  (click)="close()"
+  *ngIf="type === 'modal'"></div>

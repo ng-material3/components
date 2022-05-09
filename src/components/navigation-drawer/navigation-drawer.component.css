@@ -1,0 +1,268 @@
+.md3-navigation-drawer,
+.md3-navigation-drawer[type="standard"] {
+  width: 360px;
+  min-width: 360px;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+  display: block;
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+.md3-navigation-drawer[type="modal"] {
+  width: 0;
+  min-width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: none;
+  background-color: unset;
+  color: unset;
+  transition: width 0s 0.3s, height 0s 0.3s;
+}
+
+.md3-navigation-drawer[type="modal"].md3-navigation-drawer--show {
+  width: 100%;
+  height: 100%;
+  transition: width 0s, height 0s;
+}
+
+.md3-navigation-drawer-container,
+.md3-navigation-drawer[type="standard"] .md3-navigation-drawer-container {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  contain: strict;
+  cursor: default;
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+.md3-navigation-drawer[type="modal"] .md3-navigation-drawer-container {
+  width: 0;
+  max-width: calc(100vw - 56px);
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: -360px;
+  z-index: 2;
+  border-radius: 0 16px 16px 0;
+  transition: width 0s 0.3s, height 0s 0.3s, left 0.3s ease 0s;
+}
+
+.md3-navigation-drawer[type="modal"].md3-navigation-drawer--show .md3-navigation-drawer-container {
+  width: 360px;
+  height: 100%;
+  left: 0;
+  transition: left 0.3s ease 0s;
+}
+
+.md3-navigation-drawer-content-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  display: block;
+  background-color: var(--md-sys-color-primary);
+}
+
+.md3-navigation-drawer[type="standard"] .md3-navigation-drawer-content-layer {
+  opacity: var(--md-sys-elevation-level0-opacity);
+}
+
+.md3-navigation-drawer[type="modal"] .md3-navigation-drawer-content-layer {
+  opacity: var(--md-sys-elevation-level1-opacity);
+}
+
+.md3-navigation-drawer-content {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  display: block;
+  overflow-y: auto;
+}
+
+.md3-navigation-drawer[type="modal"] .md3-navigation-drawer-scrim {
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  contain: strict;
+  background-color: var(--md-ref-palette-neutral0);
+  opacity: 0;
+  transition: width 0s 0.3s, height 0s 0.3s, opacity 0.3s ease-in-out 0s;
+}
+
+.md3-navigation-drawer[type="modal"].md3-navigation-drawer--show .md3-navigation-drawer-scrim {
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in-out 0s;
+}
+
+.md3-navigation-drawer-divider {
+  width: calc(100% - 24px * 2);
+  height: 1px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 24px;
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid var(--md-sys-color-outline);
+}
+
+.md3-navigation-drawer-headline {
+  width: 100%;
+  height: 48px;
+  -webkit-padding-start: 28px;
+  padding-inline-start: 28px;
+  padding-left: 28px;
+  -webkit-padding-end: 28px;
+  padding-inline-end: 28px;
+  padding-right: 28px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  color: var(--md-sys-color-on-surface-variant);
+  letter-spacing: 0.01em;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.md3-navigation-drawer-button,
+.md3-navigation-drawer-label {
+  width: calc(100% - 12px * 2);
+  height: 56px;
+  padding-left: 16px;
+  -webkit-padding-start: 16px;
+  padding-inline-start: 16px;
+  padding-right: 24px;
+  -webkit-padding-end: 24px;
+  padding-inline-end: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-left: 12px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  contain: strict;
+  overflow: hidden;
+  color: var(--md-sys-color-on-surface-variant);
+  letter-spacing: 0.01em;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.md3-navigation-drawer-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.md3-navigation-drawer-button {
+  --md3-state-layer-background-color: var(--md-sys-color-on-surface);
+  --md3-state-layer-opacity: 0;
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 28px;
+}
+
+.md3-navigation-drawer-button.md3-navigation-drawer-button--selected {
+  --md3-state-layer-background-color: var(--md-sys-color-on-secondary-container);
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.md3-navigation-drawer-button-state-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  display: block;
+  background-color: var(--md3-state-layer-background-color);
+  opacity: var(--md3-state-layer-opacity);
+}
+
+.md3-navigation-drawer-button-content {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: var(--md3-content-opacity);
+}
+
+.md3-navigation-drawer-button:hover {
+  --md3-state-layer-opacity: var(--md-sys-state-hover-state-layer-opacity);
+}
+
+.md3-navigation-drawer-button:active {
+  --md3-state-layer-opacity: var(--md-sys-state-pressed-state-layer-opacity);
+}
+
+.md3-navigation-drawer-button:focus {
+  --md3-state-layer-opacity: var(--md-sys-state-focus-state-layer-opacity);
+}
+
+.md3-navigation-drawer-button-leading-icon,
+.md3-navigation-drawer-label-leading-icon {
+  margin-right: 12px;
+}
+
+.md3-navigation-drawer-button-label-text,
+.md3-navigation-drawer-label-label-text {
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.material-icons-outlined {
+  font-family: 'Material Icons Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}

@@ -1,0 +1,40 @@
+<div
+  class="md3-card-state-layer"></div>
+
+<div
+  class="md3-card-content">
+
+  <ng-template
+    #md3CardImage>
+    
+    <ng-content
+      select="md3-card-image"></ng-content>
+  
+  </ng-template>
+
+  <div
+    class="md3-card-image-container md3-card-image-container--start"
+    *ngIf="image && imageSlot === 'start'">
+      
+    <ng-container
+      *ngTemplateOutlet="md3CardImage"></ng-container>
+  
+  </div>
+
+  <div
+    class="md3-card-content-container">
+  
+    <ng-content></ng-content>
+  
+  </div>
+
+  <div
+    class="md3-card-image-container md3-card-image-container--end"
+    *ngIf="image && imageSlot === 'end'">
+      
+    <ng-container
+      *ngTemplateOutlet="md3CardImage"></ng-container>
+  
+  </div>
+
+</div>

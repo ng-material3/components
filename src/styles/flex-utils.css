@@ -1,0 +1,79 @@
+.md3_s-align-self-start {
+  align-self: flex-start !important;
+}
+
+.md3_s-align-self-end {
+  align-self: flex-end !important;
+}
+
+.md3_s-align-self-center {
+  align-self: center !important;
+}
+
+.md3_s-align-self-stretch {
+  align-self: stretch !important;
+}
+
+.md3_s-align-self-baseline {
+  align-self: baseline !important;
+}
+
+.md3_s-align-self-auto {
+  align-self: auto !important;
+}
+
+.md3_s-wrap {
+  flex-wrap: wrap !important;
+}
+
+.md3_s-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.md3_s-wrap-reverse {
+  flex-wrap: wrap-reverse !important;
+}
+
+.md3_s-justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.md3_s-justify-content-center {
+  justify-content: center !important;
+}
+
+.md3_s-justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.md3_s-justify-content-around {
+  justify-content: space-around !important;
+}
+
+.md3_s-justify-content-between {
+  justify-content: space-between !important;
+}
+
+.md3_s-justify-content-evenly {
+  justify-content: space-evenly !important;
+}
+
+.md3_s-align-items-start {
+  align-items: flex-start !important;
+}
+
+.md3_s-align-items-center {
+  align-items: center !important;
+}
+
+.md3_s-align-items-end {
+  align-items: flex-end !important;
+}
+
+.md3_s-align-items-stretch {
+  align-items: stretch !important;
+}
+
+.md3_s-align-items-baseline {
+  align-items: baseline !important;
+}

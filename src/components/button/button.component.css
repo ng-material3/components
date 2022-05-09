@@ -1,0 +1,298 @@
+:host {
+  /*** default type="filled" ***/
+  --md3-container-background-color: var(--md-sys-color-primary);
+  --md3-content-color: var(--md-sys-color-on-primary);
+  --md3-content-opacity: 1;
+  --md3-state-layer-background-color: var(--md-sys-color-on-primary);
+  --md3-state-layer-opacity: 0;
+
+  width: auto;
+  min-width: 64px;
+  height: 40px;
+  position: relative;
+  -webkit-padding-start: 12px;
+  padding-inline-start: 12px;
+  padding-left: 12px;
+  -webkit-padding-end: 12px;
+  padding-inline-end: 12px;
+  padding-right: 12px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  border-width: initial;
+  border-style: initial;
+  border-color: initial;
+  border-radius: 20px;
+  background-color: var(--md3-container-background-color);
+  color: var(--md3-content-color);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: initial;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-font-kerning: none;
+  font-kerning: none;
+}
+
+:host(.md3-button--is-icon.md3-button--icon-slotted-start) .md3-button-icon {
+  margin-right: 8px;
+}
+
+:host(.md3-button--is-icon.md3-button--icon-slotted-end) .md3-button-icon {
+  margin-left: 8px;
+}
+
+:host(.md3-button--is-icon) .md3-button-icon {
+  font-size: 18px;
+}
+
+.md3-button-state-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  display: block;
+  opacity: var(--md3-state-layer-opacity);
+  background-color: var(--md3-state-layer-background-color);
+}
+
+.md3-button-content {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  opacity: var(--md3-content-opacity);
+}
+
+:host(:not([disabled]):not([disabled="true"]):hover) {
+  --md3-state-layer-opacity: var(--md-sys-state-hover-state-layer-opacity);
+}
+
+:host(:not([disabled]):not([disabled="true"]):active) {
+  --md3-state-layer-opacity: var(--md-sys-state-pressed-state-layer-opacity);
+}
+
+:host(:not([disabled]):not([disabled="true"]):focus) {
+  --md3-state-layer-opacity: var(--md-sys-state-focus-state-layer-opacity);
+}
+
+/*** disabled, disabled="true ***/
+:host([disabled]),
+:host([disabled="true"]) {
+  --md3-container-background-color: initial !important;
+  --md3-content-color: var(--md-sys-color-on-surface) !important;
+  --md3-content-opacity: var(--md-sys-state-disabled-state-content-opacity) !important;
+  --md3-state-layer-background-color: var(--md-sys-color-on-surface) !important;
+  --md3-state-layer-opacity: var(--md-sys-state-disabled-state-container-opacity) !important;
+  cursor: default;
+}
+
+/*** type="elevated" ***/
+:host([type="elevated"]) {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:host([type="elevated"]),
+:host([type="elevated"]:active)
+:host([type="elevated"]:focus) {
+  -webkit-box-shadow: var(--md-box-shadow-elevation-level1);
+  box-shadow: var(--md-box-shadow-elevation-level1);
+}
+
+:host([type="elevated"]:hover) {
+  -webkit-box-shadow: var(--md-box-shadow-elevation-level2);
+  box-shadow: var(--md-box-shadow-elevation-level2);
+}
+
+:host([type="elevated"]),
+:host([type="elevated"][color="primary"]) {
+  --md3-container-background-color: var(--md-sys-color-surface);
+  --md3-content-color: var(--md-sys-color-primary);
+  --md3-state-layer-background-color: var(--md-sys-color-primary);
+}
+
+:host([type="elevated"]),
+:host([type="elevated"][color="secondary"]) {
+  --md3-container-background-color: var(--md-sys-color-surface);
+  --md3-content-color: var(--md-sys-color-secondary);
+  --md3-state-layer-background-color: var(--md-sys-color-secondary);
+}
+
+:host([type="elevated"]),
+:host([type="elevated"][color="tertiary"]) {
+  --md3-container-background-color: var(--md-sys-color-surface);
+  --md3-content-color: var(--md-sys-color-tertiary);
+  --md3-state-layer-background-color: var(--md-sys-color-tertiary);
+}
+
+:host([type="elevated"][disabled]),
+:host([type="elevated"][disabled="true"]) {
+  -webkit-box-shadow: var(--md-box-shadow-level0);
+  box-shadow: var(--md-box-shadow-level0);
+}
+
+/*** type="filled" ***/
+:host([type="filled"]),
+:host([type="filled"][color="primary"]) {
+  --md3-container-background-color: var(--md-sys-color-primary);
+  --md3-content-color: var(--md-sys-color-on-primary);
+  --md3-state-layer-background-color: var(--md-sys-color-on-primary);
+}
+
+:host([type="filled"][color="secondary"]) {
+  --md3-container-background-color: var(--md-sys-color-secondary);
+  --md3-content-color: var(--md-sys-color-on-secondary);
+  --md3-state-layer-background-color: var(--md-sys-color-on-secondary);
+}
+
+:host([type="filled"][color="tertiary"]) {
+  --md3-container-background-color: var(--md-sys-color-tertiary);
+  --md3-content-color: var(--md-sys-color-on-tertiary);
+  --md3-state-layer-background-color: var(--md-sys-color-on-tertiary);
+}
+
+/*** type="filled-tonal" ***/
+:host([type="filled-tonal"]),
+:host([type="filled-tonal"][color="primary"]) {
+  --md3-container-background-color: var(--md-sys-color-primary-container);
+  --md3-content-color: var(--md-sys-color-on-primary-container);
+  --md3-state-layer-background-color: var(--md-sys-color-on-primary-container);
+}
+
+:host([type="filled-tonal"][color="secondary"]) {
+  --md3-container-background-color: var(--md-sys-color-secondary-container);
+  --md3-content-color: var(--md-sys-color-on-secondary-container);
+  --md3-state-layer-background-color: var(--md-sys-color-on-secondary-container);
+}
+
+:host([type="filled-tonal"][color="tertiary"]) {
+  --md3-container-background-color: var(--md-sys-color-tertiary-container);
+  --md3-content-color: var(--md-sys-color-on-tertiary-container);
+  --md3-state-layer-background-color: var(--md-sys-color-on-tertiary-container);
+}
+
+/*** type="outlined" ***/
+:host([type="outlined"]) {
+  --md3-container-border-color: var(--md-sys-color-outline);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--md3-container-border-color);
+}
+
+:host([type="outlined"]),
+:host([type="outlined"][color="primary"]) {
+  --md3-container-background-color: var(--md-sys-color-surface);
+  --md3-container-border-color: var(--md-sys-color-outline);
+  --md3-content-color: var(--md-sys-color-primary);
+  --md3-state-layer-background-color: var(--md-sys-color-primary);
+}
+
+:host([type="outlined"]:focus),
+:host([type="outlined"][color="primary"]:focus) {
+  --md3-container-border-color: var(--md-sys-color-primary);
+}
+
+:host([type="outlined"][color="secondary"]) {
+  --md3-container-background-color: var(--md-sys-color-surface);
+  --md3-container-border-color: var(--md-sys-color-outline);
+  --md3-content-color: var(--md-sys-color-secondary);
+  --md3-state-layer-background-color: var(--md-sys-color-secondary);
+}
+
+:host([type="outlined"][color="secondary"]:focus) {
+  --md3-container-border-color: var(--md-sys-color-secondary);
+}
+
+:host([type="outlined"][color="tertiary"]) {
+  --md3-container-background-color: var(--md-sys-color-surface);
+  --md3-container-border-color: var(--md-sys-color-outline);
+  --md3-content-color: var(--md-sys-color-tertiary);
+  --md3-state-layer-background-color: var(--md-sys-color-tertiary);
+}
+
+:host([type="outlined"][color="tertiary"]:focus) {
+  --md3-container-border-color: var(--md-sys-color-tertiary);
+}
+
+:host([type="outlined"][disabled]),
+:host([type="outlined"][disabled="true"]) {
+  --md3-container-border-color: rgba(var(--md-sys-color-outline-rgb), var(--md-sys-state-disabled-state-content-opacity)) !important;
+}
+
+/*** type="text" ***/
+:host([type="text"]) {
+  --md3-container-background-color: initial;
+}
+
+:host([type="text"]),
+:host([type="text"][color="primary"]) {
+  --md3-content-color: var(--md-sys-color-primary);
+  --md3-state-layer-background-color: var(--md-sys-color-primary);
+}
+
+:host([type="text"][color="secondary"]) {
+  --md3-content-color: var(--md-sys-color-secondary);
+  --md3-state-layer-background-color: var(--md-sys-color-secondary);
+}
+
+:host([type="text"][color="tertiary"]) {
+  --md3-content-color: var(--md-sys-color-tertiary);
+  --md3-state-layer-background-color: var(--md-sys-color-tertiary);
+}
+
+:host([type="text"][disabled]),
+:host([type="text"][disabled="true"]) {
+  --md3-state-layer-background-color: initial !important;
+}
+
+.material-icons-outlined {
+  font-family: 'Material Icons Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}

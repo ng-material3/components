@@ -1,0 +1,23 @@
+<div
+  class="md3-top-app-bar-content-layer"></div>
+
+<header
+  class="md3-top-app-bar-content">
+
+  <div
+    class="md3-top-app-bar-row">
+    
+    <ng-content></ng-content>
+
+  </div>
+
+  <div
+    class="md3-top-app-bar-row"
+    *ngIf="type === 'medium' || type === 'large'">
+    
+    <span
+      class="md3-top-app-bar-headline">{{ title }}</span>
+
+  </div>
+
+</header>

@@ -1,0 +1,250 @@
+.md3-card {
+  /*** default type="filled" ***/
+  --md3-container-background-color: var(--md-sys-color-surface-variant);
+  --md3-content-color: var(--md-sys-color-on-surface-variant);
+  --md3-content-opacity: 1;
+  --md3-state-layer-background-color: var(--md-sys-color-on-surface);
+  --md3-state-layer-opacity: 0;
+
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  border-width: initial;
+  border-style: initial;
+  border-color: initial;
+  border-radius: 12px;
+  background-color: var(--md3-container-background-color);
+  color: var(--md3-content-color);
+}
+
+.md3-card-state-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  display: block;
+  opacity: var(--md3-state-layer-opacity);
+  background-color: var(--md3-state-layer-background-color);
+}
+
+.md3-card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  opacity: var(--md3-content-opacity);
+}
+
+.md3-card-content,
+.md3-card[orientation="vertical"] .md3-card-content {
+  flex-direction: column;
+}
+
+.md3-card[orientation="horizontal"] .md3-card-content {
+  flex-direction: row;
+}
+
+/*** button="true" ***/
+.md3-card[button],
+.md3-card[button="true"] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.md3-card[button]:hover,
+.md3-card[button="true"]:hover {
+  --md3-state-layer-opacity: var(--md-sys-state-hover-state-layer-opacity);
+}
+
+.md3-card[button]:active,
+.md3-card[button="true"]:active {
+  --md3-state-layer-opacity: var(--md-sys-state-pressed-state-layer-opacity);
+}
+
+.md3-card[button]:focus .md3-card-state-layer,
+.md3-card[button="true"]:focus .md3-card-state-layer {
+  --md3-state-layer-opacity: var(--md-sys-state-focus-state-layer-opacity);
+}
+
+/*** layout="true" ***/
+.md3-card[layout],
+.md3-card[layout="true"] {
+  max-width: 344px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+/*** type="elevated" ***/
+.md3-card[type="elevated"] {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.md3-card[type="elevated"],
+.md3-card[type="elevated"]:active,
+.md3-card[type="elevated"]:focus {
+  -webkit-box-shadow: var(--md-box-shadow-elevation-level1);
+  box-shadow: var(--md-box-shadow-elevation-level1);
+}
+
+.md3-card[button][type="elevated"]:hover,
+.md3-card[button="true"][type="elevated"]:hover {
+  -webkit-box-shadow: var(--md-box-shadow-elevation-level2);
+  box-shadow: var(--md-box-shadow-elevation-level2);
+}
+
+/*** type="outlined" ***/
+.md3-card[type="outlined"] {
+  --md3-container-background-color: var(--md-sys-color-surface);
+  --md3-container-border-color: var(--md-sys-color-outline);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--md3-container-border-color);
+}
+
+/*** md3-card-image ***/
+.md3-card-image .md3-card-img {
+  display: block;
+  object-fit: cover;
+}
+
+.md3-card-image .md3-card-img,
+.md3-card[orientation="vertical"] .md3-card-image .md3-card-img {
+  width: 100%;
+}
+
+.md3-card-image[size="auto"] .md3-card-img,
+.md3-card[orientation="vertical"] .md3-card-image[size="auto"] .md3-card-img {
+  height: 100%;
+}
+
+.md3-card-image[size="static"] .md3-card-img,
+.md3-card[orientation="vertical"] .md3-card-image[size="static"] .md3-card-img {
+  height: 194px;
+}
+
+.md3-card[orientation="horizontal"] .md3-card-image .md3-card-img,
+.md3-card[orientation="horizontal"] .md3-card-image[size="auto"] .md3-card-img {
+  width: 100%;
+  height: 100%;
+}
+
+.md3-card[orientation="horizontal"] .md3-card-image[size="static"] .md3-card-img {
+  width: 80px;
+  height: 100%;
+}
+
+.md3-card-image-container.md3-card-image-container--start .md3-card-image .md3-card-img,
+.md3-card[orientation="vertical"] .md3-card-image-container.md3-card-image-container--start .md3-card-image .md3-card-img {
+  border-radius: 0 0 12px 12px;
+}
+
+.md3-card-image-container.md3-card-image-container--end .md3-card-image .md3-card-img,
+.md3-card[orientation="vertical"] .md3-card-image-container.md3-card-image-container--end .md3-card-image .md3-card-img {
+  border-radius: 12px 12px 0 0;
+}
+
+.md3-card[orientation="horizontal"] .md3-card-image-container.md3-card-image-container--start .md3-card-image .md3-card-img {
+  border-radius: 0 12px 12px 0;
+}
+
+.md3-card[orientation="horizontal"] .md3-card-image-container.md3-card-image-container--end .md3-card-image .md3-card-img {
+  border-radius: 12px 0 0 12px;
+}
+
+/*** md3-card-content-container ***/
+.md3-card-content-container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.md3-card-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.md3-card-header,
+.md3-card-inner-content,
+.md3-card-actions {
+  padding-left: 16px;
+  padding-right: 16px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.md3-card-header:first-child,
+.md3-card-inner-content:first-child,
+.md3-card-actions:first-child {
+  padding-top: 16px;
+}
+
+.md3-card-header:last-child,
+.md3-card-inner-content:last-child,
+.md3-card-actions:last-child {
+  padding-bottom: 16px;
+}
+
+.md3-card-headline,
+.md3-card-subhead,
+.md3-card-inner-content,
+.md3-card-actions {
+  width: 100%;
+  display: block;
+}
+
+.md3-card-inner-content:not(:last-child) {
+  padding-bottom: 12px;
+}
+
+.md3-card-inner-content:not(:first-child) {
+  padding-top: 12px;
+}
+
+.md3-card-headline {
+  color: var(--md-sys-color-on-surface);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.md3-card-subhead {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.md3-card-subhead,
+.md3-card-inner-content {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.md3-card-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.md3-card-actions[direction="start"] {
+  justify-content: flex-start;
+}
+
+.md3-card-actions[direction="end"] {
+  justify-content: flex-end;
+}
+
+.md3-card-actions:not(:first-child):last-child {
+  padding-top: 8px;
+  padding-bottom: 16px;
+}
+
+.md3-card-actions :not(:last-child) {
+  margin-right: 8px;
+}

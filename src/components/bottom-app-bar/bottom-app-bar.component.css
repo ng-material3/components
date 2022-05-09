@@ -1,0 +1,72 @@
+:host {
+  width: inherit;
+  height: 64px;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  display: block;
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+.md3-bottom-app-bar-content-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  display: block;
+  background-color: var(--md-sys-color-primary);
+  opacity: var(--md-sys-elevation-level2-opacity);
+}
+
+.md3-bottom-app-bar-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-padding-start: 4px;
+  padding-inline-start: 4px;
+  padding-left: 4px;
+  -webkit-padding-end: 4px;
+  padding-inline-end: 4px;
+  padding-right: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.md3-bottom-app-bar-row {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+.md3-bottom-app-bar-leading-navigation-button {
+  margin-right: 4px;
+}
+
+.md3-bottom-app-bar-trailing-buttons,
+:host([direction="end"]) .md3-bottom-app-bar-trailing-buttons {
+  display: flex;
+  margin-left: auto;
+}
+
+:host([direction="start"]) .md3-bottom-app-bar-trailing-buttons {
+  margin-left: 0;
+}
+
+.md3-bottom-app-bar-trailing-buttons > :not(:last-child) {
+  margin-right: 4px;
+}
